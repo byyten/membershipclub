@@ -1,0 +1,41 @@
+extends layout 
+
+block content 
+  .content
+
+    .heading
+      +header
+    .contentbody
+
+        .sidebar
+            .user
+                +user(user)
+                //-                 p #{(user ? user.username : "unauthenticated")} #{(user && user.club ? "Club Member":"")} #{(user && user.admin ? "Administrator":"")}
+            .nav
+                +index 
+                +register 
+                +messageboard
+
+        .payload
+            form#authenticate.authenticate(method="POST" action="")
+                .formcontainer
+                    .formtitle 
+                        p Authenticate
+                    .formsubtitle 
+                        p Enter your username 
+                    .inputlabel 
+                        .label
+                            label(for="username") Username: 
+                        .input
+                            input#username.username(name="username" type="text")
+                    .inputlabel 
+                        .label
+                            label(for="password") Password: 
+                        .input
+                            input#password.password(name="password" type="password")
+                    .formsubmit
+                        input#submit.submit(type="submit" value="Sign in") 
+
+            .errors
+                if status === 403
+                    p To post a message you must authenticate

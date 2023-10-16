@@ -1,0 +1,38 @@
+extends layout 
+
+block content 
+  .content
+
+    .heading
+        +header
+
+    .contentbody
+
+        .sidebar
+            .user
+                +user(user)
+                //-                 p #{(user ? user.username : "unauthenticated")} #{(user && user.club ? "Club Member":"")} #{(user && user.admin ? "Administrator":"")}
+            .nav
+                +index 
+                +signout
+                +messageboard
+                +post_message 
+
+        .payload
+            form#authenticate.authenticate(method="POST" action="")
+                .formcontainer
+                    .formtitle 
+                        p Authenticate as a club member
+                    .formsubtitle 
+                        p Enter the Club Member secret 
+                    .inputlabel 
+                        .label
+                            label(for="password") Password: 
+                        .input
+                            input#password.password(name="password" type="password")
+                    .formsubmit
+                        input#submit.submit(type="submit" value="Sign in") 
+
+            .errors
+                if authenticated !== undefined
+                    p Incorrect password

@@ -1,0 +1,68 @@
+extends layout 
+
+block content 
+  .content
+
+    .heading
+      +header
+
+    .contentbody
+
+        .sidebar
+            .user
+                +user(user)
+            .nav
+                +index 
+                +messageboard
+
+        .payload
+            form#register.register(method="POST" action="")
+                .formcontainer
+                    .formtitle 
+                        p Register 
+                    .formsubtitle 
+                        p Create an account to become a club member
+                    .inputlabel 
+                        .label
+                            label(for="email") email: 
+                        .input
+                            input#email.email(name="email" type="email")
+
+                    .inputlabel 
+                        .label
+                            label(for="username") username: 
+                        .input
+                            input#username.username(name="username" type="text")
+
+                    .inputlabel 
+                        .label
+                            label(for="forename") Forename: 
+                        .input
+                            input#forename.forename(name="forename" type="text")
+
+                    .inputlabel 
+                        .label
+                            label(for="surname") Surname: 
+                        .input
+                            input#surname.surname(name="surname" type="text")
+
+                    .inputlabel 
+                        .label
+                            label(for="password") Password: 
+                        .input
+                            input#password.password(name="password" type="password")
+                    .inputlabel 
+                        .label
+                            label(for="confirm") Confirm Password: 
+                        .input
+                            input#confirm.confirm(name="confirm" type="password")
+
+                    .formsubmit
+                        input#submit.submit(type="submit" value="Register") 
+
+            .errors
+            if status === 403
+                p To post a message you must authenticate
+
+
+ 

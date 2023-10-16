@@ -1,0 +1,229 @@
+:root {
+  --content-width: 800px;
+  --sidebar-width: 200px;
+}
+
+
+/* structured pages */
+@font-face {
+  font-family: OpenSans;
+  src: url("./OpenSans.ttf");
+}
+
+body {
+  padding: 50px;
+  font: 14px OpenSans, Tahome, Lucida Grande, Helvetica, Arial, sans-serif;
+  display:flex; 
+  /* min-width: var(--content-width);
+  max-width: 800px; */
+  justify-content: center;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  margin: 1rem;
+}
+
+.signout {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  color: #7face7;
+  font-family: Tahoma;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+span.material-symbols-outlined {
+  font-size: 0.8rem;
+  margin: 0 1rem; 
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+p { margin-bottom: 0.1rem; padding: 0; }
+.content {
+  display:flex;
+  flex-direction: column;
+  padding: 1rem 0 2rem 0;
+  
+}
+
+.heading {
+  display:flex;
+  min-width: var(--content-width);
+}
+
+span.header {
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+span.header_sub {
+  font-size: 0.9rem;
+}
+
+
+.contentbody {
+  display: flex;
+}
+
+.footer {
+  /* min-height: 60px;
+  display: flex;
+  justify-content: center; */
+}
+.sidebar {
+  display:flex;
+  flex-direction: column;
+  min-width: var(--sidebar-width);
+}
+  /* .sidebar .user {}
+  .sidebar .nav {} */
+
+.payload {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+}
+  .formcontainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputlabel {
+    display:flex;
+    min-height: 2rem;
+    /* padding: ; */
+    margin: 0.5rem;
+  }
+  .label {
+    min-width: 8rem;
+  }
+  
+  textarea.content,
+  input {
+    font-family: OpenSans;
+    appearance: none;
+    min-width: 20rem;
+    padding: .5rem 1rem;
+    border: none;
+    background-color: lightgray;
+    border-radius: 5px;
+  }  
+  textarea {
+    font-size: 0.8rem;
+    font-family: OpenSans;
+  }
+  .formsubmit {
+    display: flex;
+    justify-content: right;
+  }
+  .formsubmitleft {
+    display: flex;
+    justify-content: left;
+  }
+
+  input.submit {
+    margin: 0.5rem;
+    min-width: 8rem;
+    background-color: green;
+    color: white;
+    font-family: OpenSans;
+  }
+
+ label.signout {
+    appearance: none;
+    text-decoration: none;
+    color: darkslateblue;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .right {
+    display:flex;
+    justify-content: right;
+   
+  }
+  .right a {
+    text-decoration: none;
+    /* color: #00B7FF; */
+    color: darkslateblue;
+    font-size: 0.8rem;
+  }
+  .formsubmitleft input#submit {
+    display: none;
+  }
+  label.signout,
+  p a {
+    /* padding: 0.05rem; */
+    margin: 0 1rem;
+    min-width: 10rem;
+    text-decoration: none;
+    /* color: #00B7FF; */
+    color: darkslateblue;
+    font-size: 0.8rem;
+  }
+
+  span.icon {
+    margin-right:0.25rem;
+  }
+  .errors {}
+
+  .nav p form {
+    display: flex;
+    justify-content: left;
+  }
+
+  span.content,
+  span.label  {
+    display: inline-block;
+    min-width: 10rem;
+  }
+
+  .message_columns {
+    display:flex;
+  }
+
+  li.message {
+    padding: 1rem;
+    background-color: rgba(238, 250, 135, 0.247);
+    border-radius: 5px;
+    filter: drop-shadow(10px 10px 5px lightgray)
+  }
+  li.message div.subject,
+  li.message div.content {
+    min-width: 10rem;
+    max-width: 10rem;
+  }
+  
+  li.message div.content {
+    max-width: 20rem;
+    min-width: 20rem;
+  }
+  
+  .meta {
+    color: rgba(247, 143, 143, 0.774);
+    font-size: 0.8rem
+  }
+
+  .box {
+    display:flex;
+    min-width: 800px;
+    max-width: 800px;
+  }

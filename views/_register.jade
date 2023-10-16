@@ -1,0 +1,21 @@
+extends layout 
+
+block content 
+    h1 Register 
+
+    form#register.register(method="POST" action="")
+        label(for="email") Email: 
+        input#email.email(name="email" type="email")
+        label(for="username") Username: 
+        input#username.username(name="username")
+        label(for="forename") Forename: 
+        input#forename.forename(name="forename")
+        label(for="surname") Surname: 
+        input#surname.surname(name="surname")
+        label(for="password") Password: 
+        input#password.password(name="password" type="password")
+        label(for="confirm") Confirm Password: 
+        input#confirm.confirm(name="confirm" type="password")
+        br
+        input#submit.submit(type="submit" value="Register") 
+

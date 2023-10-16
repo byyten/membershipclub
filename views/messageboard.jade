@@ -1,0 +1,52 @@
+extends layout
+
+block content 
+  .content
+
+    .heading
+        +header 
+
+    .contentbody
+        .sidebar
+            .user
+                +user(user)
+            .nav
+                +index
+                if !user
+                    +register 
+                    +signin 
+                else
+                    if !user.club
+                        +signin_club
+                    if !user.admin
+                        +signin_admin
+                    +signout
+                    +post_message 
+    
+        .payload
+            .messageboard 
+                ._ 
+                    p Messages
+                ul 
+                    li 
+                        span.label Subject
+                        span.label Message 
+                    each message in messages 
+                            
+                        if user
+                            li.message
+                                .message_columns 
+                                    .subject #{message.subject} 
+                                    .content_ #{message.content} 
+                                .meta
+                                    span.username #{message.username} &nbsp;&nbsp;
+                                    span.datetime #{new Date(message.datetime).toISOString().replace(/[TZ]/g," ").slice(0, 16)} 
+                                if user.admin
+                                    +delete(message)
+                                
+                        else 
+                            li.message 
+                                .message_columns 
+                                    .subject #{message.subject} 
+                                    .content_ #{message.content} 
+

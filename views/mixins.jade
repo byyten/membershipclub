@@ -1,0 +1,67 @@
+mixin header
+    .content
+        span.header Post-a-Note
+        span.header_sub post notes, information, events to the club membership
+        
+mixin signout 
+    p
+        form(method="POST", action="/signout")
+            .formcontainer 
+                .formsubmitleft
+                    label.signout(for="submit") 
+                        span.material-symbols-outlined logout
+                        span Signoff
+                        input#submit.signout(type="submit" name="submit" value="Signout")
+mixin index 
+    p
+        a(href="/") 
+            span.material-symbols-outlined home 
+            span Home
+mixin signin 
+    p
+        a(href="/signin") 
+            span.material-symbols-outlined login 
+            span Signin
+mixin signin_club 
+    p
+        a(href="/signin_club") 
+            span.material-symbols-outlined loyalty
+            span Club Member Signin
+mixin signin_admin 
+    p
+        a(href="/signin_admin") 
+            span.material-symbols-outlined admin_panel_settings 
+            span Administrator Signin
+mixin register
+    p
+        a(href="/register") 
+            span.material-symbols-outlined how_to_reg 
+            span Register
+mixin post_message
+    p
+        a(href="/message") 
+            span.material-symbols-outlined post_add 
+            span Post a message
+mixin messageboard
+    p
+        a(href="/messageboard") 
+            span.material-symbols-outlined forum 
+            span Forum
+mixin user(user)
+    p 
+        span.material-symbols-outlined person
+        if user && user.username
+            span #{user.username}
+        else 
+            span Unauthenticated 
+        if user && user.club
+            span.material-symbols-outlined.icon(title="\n  Bona Fide Club Member  \n  \n") badge 
+           
+        if user && user.admin
+            span.material-symbols-outlined.icon(title="\n  Administrator  \n  \n") shield_person
+mixin delete(message) 
+    .right 
+        a(href=message.url+"/delete") 
+            span.material-symbols-outlined delete_forever
+            span Delete
+            
